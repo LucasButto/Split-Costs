@@ -17,7 +17,7 @@
   gap: 30px;
   padding: 30px;
   border-radius: 10px;
-  background-color: #e7ebca;
+  background-color: #e9f5909c;
 }
 
 .new-activity-button {
@@ -47,5 +47,6 @@
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  scale: 1.03;
   transition: all 0.5s;
 }

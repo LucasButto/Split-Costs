@@ -1,22 +1,35 @@
 import React from "react";
+import { useState } from "react";
+
 import Activity from "./Activity";
-import "../styles/ActivitiesContainer.css";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
+import "../styles/ActivitiesContainer.css";
+import Modal from "./Modal";
+
 const ActivitiesContainer = () => {
+  const [shownModal, setShownModal] = useState(false);
+  const openModalhandler = () => {
+    setShownModal(!shownModal);
+    console.log(shownModal);
+  };
   return (
     <div>
       <h2>Activities</h2>
       <div className="activities-container">
-        <button className="activity new-activity-button">
+        <button
+          className="activity new-activity-button"
+          onClick={openModalhandler}
+        >
           <div className="circle">
             <span>
               <AddRoundedIcon />
             </span>
           </div>
         </button>
-        <Activity name={"viaje"} />
-        <Activity name={"comida"} />
+        <Activity name={"viaje"} time={"0"} />
+        <Activity name={"comida"} time={"300"} />
+        <Modal shownModal={shownModal} setShownModal={setShownModal} />
       </div>
     </div>
   );
