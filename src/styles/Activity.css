@@ -1,0 +1,41 @@
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 3px;
+  border: none;
+  background-color: transparent;
+  color: #c81616b8;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.delete-button:hover {
+  color: #c81616e6;
+  transform: scale(1.2);
+}
+
+.delete-button:active {
+  transform: scale(0.7);
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e9f5909c;
+}
+
+.activity:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}

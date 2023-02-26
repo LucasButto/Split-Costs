@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 
 import Activity from "./Activity";
+import Modal from "./Modal";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
 import "../styles/ActivitiesContainer.css";
-import Modal from "./Modal";
 
 const ActivitiesContainer = () => {
   const [shownModal, setShownModal] = useState(false);
@@ -15,7 +15,6 @@ const ActivitiesContainer = () => {
   };
   return (
     <div>
-      <h2>Activities</h2>
       <div className="activities-container">
         <button
           className="activity new-activity-button"
@@ -29,6 +28,11 @@ const ActivitiesContainer = () => {
         </button>
         <Activity name={"viaje"} time={"0"} />
         <Activity name={"comida"} time={"300"} />
+        <Activity name={"comida"} time={"600"} />
+        <Activity name={"comida"} time={"900"} />
+        <Activity name={"comida"} time={"1200"} />
+        <Activity name={"comida"} time={"1500"} />
+        <Activity name={"comida"} time={"1800"} />
         <Modal shownModal={shownModal} setShownModal={setShownModal} />
       </div>
     </div>

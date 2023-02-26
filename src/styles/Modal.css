@@ -76,6 +76,14 @@
   color: #000;
 }
 
+/**
+  * TODO: arreglar mostrar linea roja al haber un error
+*/
+
+.error > input {
+  border: 1px solid red;
+}
+
 .modal-body > input {
   width: 100%;
   height: 40px;
