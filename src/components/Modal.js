@@ -1,27 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Modal.css";
 
 const Modal = ({ shownModal, setShownModal }) => {
-  const styles = shownModal ? "" : "shown-modal";
+  const styles = shownModal ? "show-modal" : "hide-modal";
+  const [inputValue, setInputValue] = useState("");
   const closeModalHandler = () => {
     setShownModal(false);
+    setInputValue("");
+  };
+  const createEventHandler = () => {
+    console.log("evento creado: " + inputValue);
+    closeModalHandler();
   };
   return (
     <>
       <div className={styles + " modal"}>
         <div className="modal-content">
           <div className="modal-header">
-            <h2>Modal Header</h2>
             <button className="close-button" onClick={closeModalHandler}>
               x
             </button>
           </div>
           <div className="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
-          </div>
-          <div className="modal-footer">
-            <h3>Modal Footer</h3>
+            <h3>Ingrese el nombre del evento</h3>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Ej: Viaje, Comida, Supermercado..."
+            />
+            <div className="button-container">
+              <button onClick={createEventHandler}>Agregar</button>
+            </div>
           </div>
         </div>
       </div>
