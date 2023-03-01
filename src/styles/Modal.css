@@ -29,7 +29,7 @@
   height: 300px;
   padding: 20px;
   border-radius: 10px;
-  background-color: #1373c2e8;
+  background-color: #74bee1d4;
 }
 
 .modal-header {
@@ -62,29 +62,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
   height: 100%;
   padding: 30px;
   border-radius: 10px;
-  background-color: #e9f5909c;
+  background-color: #d1faffe1;
 }
 
 .modal-body > h3 {
   font-size: 1.7rem;
   font-weight: 700;
-  color: #000;
+  color: #202020;
 }
 
-/**
-  * TODO: arreglar mostrar linea roja al haber un error
-*/
-
-.error > input {
-  border: 1px solid red;
-}
-
-.modal-body > input {
+.modal-body-input {
   width: 100%;
   height: 40px;
   padding: 10px;
@@ -96,39 +88,70 @@
   color: #000;
 }
 
-.modal-body > input::placeholder {
+.modal-body-input::placeholder {
   font-size: 1rem;
   font-weight: 700;
+}
+
+.error {
+  border: 1px solid red;
 }
 
 .button-container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
   width: 100%;
 }
 
-.button-container > button {
-  position: relative;
-  left: 0;
-  width: 100px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #000;
-  outline: none;
+.error-message {
   font-size: 1rem;
   font-weight: 700;
-  color: #000;
-  background-color: #e9f5909c;
+  color: red;
 }
 
-.button-container > button:hover {
+.add-button {
+  padding: 10px 15px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+.add-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: rgb(127, 255, 157);
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.add-button:hover {
+  color: #1d1d1d;
   cursor: pointer;
-  transform: scale(1.1);
-  transition: all 0.1s ease-in-out;
 }
 
-.button-container > button:active {
+.add-button:hover::before {
+  width: 100%;
+}
+
+.add-button:active {
   transform: scale(0.9);
   transition: all 0.2s ease-in-out;
 }

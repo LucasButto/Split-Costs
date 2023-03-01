@@ -9,6 +9,10 @@ import "../styles/ActivitiesContainer.css";
 
 const ActivitiesContainer = () => {
   const [shownModal, setShownModal] = useState(false);
+  const [activities, setActivities] = useState([
+    { name: "jugar", time: "0" },
+    { name: "hacer nada", time: "300" },
+  ]);
   const openModalhandler = () => {
     setShownModal(!shownModal);
     console.log(shownModal);
@@ -26,14 +30,15 @@ const ActivitiesContainer = () => {
             </span>
           </div>
         </button>
-        <Activity name={"viaje"} time={"0"} />
-        <Activity name={"comida"} time={"300"} />
-        <Activity name={"comida"} time={"600"} />
-        <Activity name={"comida"} time={"900"} />
-        <Activity name={"comida"} time={"1200"} />
-        <Activity name={"comida"} time={"1500"} />
-        <Activity name={"comida"} time={"1800"} />
-        <Modal shownModal={shownModal} setShownModal={setShownModal} />
+        {activities.map((activity) => {
+          return <Activity name={activity.name} time={activity.time} />;
+        })}
+        <Modal
+          shownModal={shownModal}
+          setShownModal={setShownModal}
+          activities={activities}
+          setActivities={setActivities}
+        />
       </div>
     </div>
   );
